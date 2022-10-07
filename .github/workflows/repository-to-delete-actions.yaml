@@ -23,12 +23,8 @@ jobs:
       run:
         shell: bash
     steps:
-    - name: update apt
-      run: sudo apt update && sudo apt upgrade
-    - name: install curl
-      run: sudo apt install curl
+    - name: Checkout
+      uses: actions/checkout@v3
     - name: docker build
-      run: docker build \
-          --tag test-image:1.0
-          .
+      run: docker build -t test-image:1.0 .
     
