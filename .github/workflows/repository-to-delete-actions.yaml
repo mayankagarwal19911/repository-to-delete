@@ -27,3 +27,8 @@ jobs:
       run: sudo apt update && sudo apt upgrade
     - name: install curl
       run: sudo apt install curl
+    - name: docker build
+      run: docker build \
+          --tag test-image:1.0
+          .
+    
