@@ -4,8 +4,9 @@ name: Terraform
     branches:
     - main
   workflow_dispatch:
-      value: 
-        required: true
+      inputs: 
+        value:
+          required: true
 env:
   VCS_WORKSPACE_NAME: github-workflow
   TF_VERSION: 0.14.3
