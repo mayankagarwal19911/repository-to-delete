@@ -39,4 +39,4 @@ jobs:
     - name: update apt
       run: sudo apt update && sudo apt upgrade
     - name: install curl
-      run: echo "${{ git.event.input.template_repository_path }}"
+      run: echo "${{ github.event.inputs.template_repository_path }}"
