@@ -3,6 +3,8 @@ name: Terraform
   push:
     branches:
     - main
+  workflow_dispatch:
+    inputs:
 env:
   VCS_WORKSPACE_NAME: github-workflow
   TF_VERSION: 0.14.3
@@ -23,10 +25,7 @@ jobs:
       run:
         shell: bash
     steps:
-    - name: print inputs
-      run: |
-        echo "Hello ${{ github.event.inputs.repository_name }}"
-        echo "Hello ${{ github.event.inputs.client_id }}"
-        echo "Hello ${{ github.event.inputs.namespace_name }}"
-        echo "Hello ${{ github.event.inputs.template_repository_path }}"
-        echo "Hello ${{ github.event.inputs.description }}"
+    - name: update apt
+      run: sudo apt update && sudo apt upgrade
+    - name: install curl
+      run: sudo apt install curl
