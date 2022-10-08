@@ -8,6 +8,7 @@ name: Terraform
         value:
           required: true
           type: object
+          default: "{'repository_name':'lbg-statestreet-mortgage','client_id':'7500907','namespace_name':'statestreet_mortgage','template_repository_path':'https://github.com/learnk8s/docker-hello-world','description':'Borrower and Loan Use Description.'}"
 env:
   VCS_WORKSPACE_NAME: github-workflow
   TF_VERSION: 0.14.3
