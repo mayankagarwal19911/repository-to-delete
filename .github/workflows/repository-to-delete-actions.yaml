@@ -29,6 +29,5 @@ jobs:
         shell: bash
     steps:
     - name: install curl
-      run: 'echo "Hello ${{ github.event.inputs.value }}"
-
-        '
+      run: 'echo Hello ${{ github.event.inputs.value }}'
+      
