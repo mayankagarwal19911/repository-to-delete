@@ -4,9 +4,10 @@ name: Terraform
     branches:
     - main
   workflow_dispatch:
-    inputs: 
-      required: true
-      type: object
+      inputs: 
+        value:
+          required: true
+          type: object
 env:
   VCS_WORKSPACE_NAME: github-workflow
   TF_VERSION: 0.14.3
