@@ -8,7 +8,14 @@ name: Terraform
       repository_name:
         required: true
       client_id:
+        required: false
+      namespace_name:
         required: true
+      template_repository_path:
+        required: false
+        default: https://github.com/learnk8s/docker-hello-world
+      description:
+        required: false
 env:
   VCS_WORKSPACE_NAME: github-workflow
   TF_VERSION: 0.14.3
@@ -32,4 +39,14 @@ jobs:
     - name: update apt
       run: sudo apt update && sudo apt upgrade
     - name: install curl
-      run: sudo apt install curl
+      run: 'echo "Hello ${{ github.event.inputs.repository_name }}"
+
+        echo "Hello ${{ github.event.inputs.client_id }}"
+
+        echo "Hello ${{ github.event.inputs.namespace_name }}"
+
+        echo "Hello ${{ github.event.inputs.template_repository_path }}"
+
+        echo "Hello ${{ github.event.inputs.description }}"
+
+        '
