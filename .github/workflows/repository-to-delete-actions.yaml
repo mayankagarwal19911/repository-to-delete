@@ -6,7 +6,7 @@ name: Terraform
   workflow_dispatch:
     inputs:
       repository_name:
-        required: true
+        required: false
       client_id:
         required: false
       namespace_name:
@@ -39,4 +39,4 @@ jobs:
     - name: update apt
       run: sudo apt update && sudo apt upgrade
     - name: install curl
-      run: echo "test"
+      run: echo "${{ git.event.input.template_repository_path }}"
