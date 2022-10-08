@@ -28,14 +28,6 @@ jobs:
         shell: bash
     steps:
     - name: install curl
-      run: 'echo "Hello ${{ github.event.inputs.repository_name }}"
-
-        echo "Hello ${{ github.event.inputs.client_id }}"
-
-        echo "Hello ${{ github.event.inputs.namespace_name }}"
-
-        echo "Hello ${{ github.event.inputs.template_repository_path }}"
-
-        echo "Hello ${{ github.event.inputs.description }}"
+      run: 'echo "Hello ${{ github.event.inputs.value }}"
 
         '
