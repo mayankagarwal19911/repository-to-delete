@@ -5,9 +5,9 @@ name: Terraform
     - main
   workflow_dispatch:
     inputs:
-      repository_name:
+    - repository_name:
         required: true
-      client_id:
+    - client_id:
         required: true
 env:
   VCS_WORKSPACE_NAME: github-workflow
@@ -29,7 +29,7 @@ jobs:
       run:
         shell: bash
     steps:
-    - name: update apt
+      name: update apt
       run: sudo apt update && sudo apt upgrade
-    - name: install curl
+      name: install curl
       run: sudo apt install curl
