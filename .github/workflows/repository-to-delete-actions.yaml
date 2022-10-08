@@ -38,8 +38,8 @@ jobs:
       uses: actions/checkout@v3
     - name: docker build
       run: |
-        echo "Hello $!"
-        echo "- in $!"
+        echo "Hello github.event.inputs.name.description"
+        echo "- in github.event.inputs.home.description"
       
       
     
